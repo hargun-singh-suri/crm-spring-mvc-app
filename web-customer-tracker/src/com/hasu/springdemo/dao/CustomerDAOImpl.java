@@ -7,7 +7,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 import com.hasu.springdemo.entity.Customer;
 
 /*@Repository will help in component scanning and translate checked exception to unchecked*/
@@ -22,7 +21,6 @@ public class CustomerDAOImpl implements CustomerDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	@Transactional
 	public List<Customer> getCustomers() {
 		// # Get hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
@@ -31,7 +29,6 @@ public class CustomerDAOImpl implements CustomerDAO {
 		Query<Customer> theQuery = currentSession.createQuery("from Customer", Customer.class);
 
 		// # Get result from query by executing it
-
 		List<Customer> customerList = theQuery.getResultList();
 
 		// # Return the results
