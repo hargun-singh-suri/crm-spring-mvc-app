@@ -18,6 +18,10 @@
 
 	<div id="container">
 		<div id="content">
+		<!-- Add our HTML Button here to add the data in form and save it  -->
+		<input type="button" value="Add New Customer" onclick="window.location.href='showFormForAdd'; return false;" class="add-button">
+		
+		<!-- Add our HTML Table to show the list here -->
 			<table>
 				<tr>
 					<th>First Name</th>
