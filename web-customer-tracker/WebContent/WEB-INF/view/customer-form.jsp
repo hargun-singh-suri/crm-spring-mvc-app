@@ -23,6 +23,10 @@
 		<h3>Save Customer</h3>
 		<form:form action="saveCustomer" modelAttribute="customer"
 			method="POST">
+			
+			<!-- Need to associate this data with Customer - in case if update is performed this is used -->
+			<form:hidden path="id"/>
+			
 			<table>
 				<tbody>
 					<tr>
